@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const fs = require('fs')
 const path = require('path');
 
-const db = null;
+let db = null;
 
 module.exports = app => {
   const config = app.libs.config;
@@ -16,7 +16,7 @@ module.exports = app => {
       config.params
     );
 
-    const db = {
+    db = {
         sequelize,
         Sequelize,
         models: {}
