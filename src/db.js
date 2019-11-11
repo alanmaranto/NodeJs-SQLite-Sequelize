@@ -5,10 +5,11 @@ const path = require('path');
 let db = null;
 
 module.exports = app => {
-  const config = app.libs.config;
-  console.log(config);
+
 
   if (!db) {
+    const config = app.libs.config;
+    console.log(config);
     const sequelize = new Sequelize(
       config.database,
       config.username,

@@ -6,5 +6,9 @@ module.exports = app => {
     app.set(port);
 
     //middlewares
-    app.use(express.json())
+    app.use(express.json());
+    app.use((req, res, next) => {
+        //delete req.body.id;
+        next();
+    })
 }
